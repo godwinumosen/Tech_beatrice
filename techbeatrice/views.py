@@ -14,3 +14,7 @@ def base (request):
 class HomeView(ListView): 
     model = TechbeatricePostModel
     template_name = 'techbeatrice/home.html'
+
+#About page of the deus magnus blog app
+def AboutView (request):
+    return render(request, 'techbeatrice/about_us.html', {})
