@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse
 from django.urls import reverse_lazy
-
+from .models import TechbeatricePostModel
 # Create your views here.
 '''def home (request):
     return render (request, 'techbeatrice/home.html' )'''
