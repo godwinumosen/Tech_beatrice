@@ -3,24 +3,38 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
 
-#The search button model of locatin
-    
+
+class Techbeatrice_Subjects(models.Model):      
+    techbeatrice_subjects_title = models.CharField(max_length =205, blank=True, null=True)
+    techbeatrice_subjects_description = models.TextField()
+    techbeatrice_subjects_img = models.ImageField(upload_to ='tech_subjects_img/',blank=True,null=True)
+    techbeatrice_subjects_slug = models.SlugField (max_length =205,blank=True, null=True)
+    techbeatrice_subjects_publish_date = models.DateTimeField (auto_now_add= True)
+    techbeatrice_subjects_author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering =['-techbeatrice_subjects_publish_date']
+    def __str__(self):
+        return self.techbeatrice_subjects_title + ' | ' + str(self.techbeatrice_subjects_author)
+    def get_absolute_url(self):
+        return reverse('home')
+
 # The main model for The techbeatrice Model category
-class TechbeatricePostModel(models.Model):
-    techbeatrice_title = models.CharField(max_length =255, blank=True, null=True)
-    techbeatrice_cost_price = models.IntegerField(default ='0', blank=True, null=True)
-    techbeatrice_description = models.TextField()
-    techbeatrice_img = models.ImageField(upload_to ='tech_images/',blank=True,null=True)
-    techbeatrice_slug = models.SlugField (max_length =255,blank=True, null=True)
-    techbeatrice_publish_date = models.DateTimeField (auto_now_add= True)
-    techbeatrice_author = models.ForeignKey(User, on_delete=models.CASCADE)
+class Techbeatrice_Courses_PostModel(models.Model):
+    techbeatrice_courses_title = models.CharField(max_length =255, blank=True, null=True)
+    techbeatrice_courses_cost_price = models.IntegerField(default ='0', blank=True, null=True)
+    techbeatrice_courses_description = models.TextField()
+    techbeatrice_courses_img = models.ImageField(upload_to ='tech_courses_img/',blank=True,null=True)
+    techbeatrice_courses_slug = models.SlugField (max_length =255,blank=True, null=True)
+    techbeatrice_courses_publish_date = models.DateTimeField (auto_now_add= True)
+    techbeatrice_courses_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
          
     class Meta:
-        ordering =['-techbeatrice_publish_date']
+        ordering =['-techbeatrice_courses_publish_date']
     
     def __str__(self):
-        return self.techbeatrice_title + ' | ' + str(self.techbeatrice_author)
+        return self.techbeatrice_courses_title + ' | ' + str(self.techbeatrice_courses_author)
     
     def get_absolute_url(self):
         return reverse('home')
