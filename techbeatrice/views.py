@@ -12,8 +12,16 @@ def base (request):
     return render(request,"base.html")
 #The main Techbeatrice HomeView page
 class HomeView(ListView): 
-    model = Techbeatrice_Courses_PostModel
-    template_name = 'techbeatrice/home.html'
+    model = Techbeatrice_Subjects 
+    template_name = 'techbeatrice/home.html'   
+
+    #This model is for the second Techbeatrice_Courses_PostModel sub category of the home page
+    def get_context_data(self, **kwargs):  
+        context = super().get_context_data(**kwargs)
+    #context['user'] = self.request.user
+        context['second_techbeatrices'] = Techbeatrice_Courses_PostModel.objects.all()
+        return context
+        
 
 #About page of the deus magnus blog app
 def AboutView (request):

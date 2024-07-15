@@ -44,26 +44,29 @@
     <!-- Carousel End -->
 
     <!-- Category Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5 pb-3">
-            <div class="text-center mb-5">
-                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
-                <h1>Techbeatrice Top Subjects</h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img class="img-fluid" src="{% static 'img/cat-1.jpg' %}" alt="">
-                        <a class="cat-overlay text-white text-decoration-none" href="">
-                            <h4 class="text-white font-weight-medium">CyberSecurity</h4>
-                            <span>20 Courses</span>
-                        </a>
-                    </div>
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
+            <h1>Techbeatrice Top Subjects</h1>
+        </div>
+        <div class="row">
+            {% for post in object_list %}
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                    <img class="img-fluid" src="{{ post.techbeatrice_subjects_img.url }}" alt="">
+                    <a class="cat-overlay text-white text-decoration-none" href="">
+                        <h4 class="text-white font-weight-medium">{{ post.techbeatrice_subjects_title|truncatechars:15}}</h4>
+                        <span>20 Courses</span>
+                    </a>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    <!-- Category Start -->
+</div>
+<!-- Category Start -->
+
 
 
     <!-- Courses Start -->
@@ -74,11 +77,12 @@
                 <h1>Our Popular Courses</h1>
             </div>
             <div class="row">
+                {% for second_techbeatrice in second_techbeatrices %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
                         <img class="img-fluid" src="{% static 'img/course-1.jpg' %}" alt="">
                         <div class="bg-secondary p-4">
-                            <a class="h5" href="">Cybersecurity</a><br><br>
+                            <a class="h5" href="">{{ second_techbeatrice.techbeatrice_courses_title }}</a><br><br>
                             <p>Learn Cybersecurity today</p>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
@@ -90,7 +94,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
