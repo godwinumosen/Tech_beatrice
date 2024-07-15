@@ -54,10 +54,10 @@
             {% for post in object_list %}
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="cat-item position-relative overflow-hidden rounded mb-2">
-                    <img class="img-fluid" src="{{ post.techbeatrice_subjects_img.url }}" alt="">
+                    <img class="img-fluid" src="{{ post.techbeatrice_subjects_img.url }}"height="150px" alt="">
                     <a class="cat-overlay text-white text-decoration-none" href="">
                         <h4 class="text-white font-weight-medium">{{ post.techbeatrice_subjects_title|truncatechars:15}}</h4>
-                        <span>20 Courses</span>
+                        <span>{{ post.techbeatrice_subjects_description|truncatechars:15}}</span>
                     </a>
                 </div>
             </div>
@@ -80,10 +80,10 @@
                 {% for second_techbeatrice in second_techbeatrices %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'img/course-1.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'img/course-1.jpg' %}"height="220px" alt="">
                         <div class="bg-secondary p-4">
-                            <a class="h5" href="">{{ second_techbeatrice.techbeatrice_courses_title }}</a><br><br>
-                            <p>Learn Cybersecurity today</p>
+                            <a class="h5" href="">{{ second_techbeatrice.techbeatrice_courses_title|truncatechars:24 }}</a><br><br>
+                            <p>{{ second_techbeatrice.techbeatrice_courses_description |truncatechars:75}}</p>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h5 class="m-0">$99</h5>
