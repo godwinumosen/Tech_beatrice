@@ -21,6 +21,14 @@ class HomeView(ListView):
     #context['user'] = self.request.user
         context['second_techbeatrices'] = Techbeatrice_Courses_PostModel.objects.all()
         return context
+    
+ #The first Techbeatrice ArticleDetailView page
+class ArticleDetailView(DetailView):
+    model = Techbeatrice_Subjects
+    template_name = 'techbeatrice/article_detail.html'
+    def ArticleDetailView(request, pk):  
+        object = get_object_or_404(Techbeatrice_Subjects, pk=pk)
+        return render(request, 'article_detail.html', {'detail': object})
         
 
 #About page of the deus magnus blog app

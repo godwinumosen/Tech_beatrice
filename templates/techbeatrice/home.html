@@ -24,7 +24,6 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +33,6 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
                             <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                            <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -55,7 +53,7 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="cat-item position-relative overflow-hidden rounded mb-2">
                     <img class="img-fluid" src="{{ post.techbeatrice_subjects_img.url }}"height="150px" alt="">
-                    <a class="cat-overlay text-white text-decoration-none" href="">
+                    <a class="cat-overlay text-white text-decoration-none"href="{% url 'detail' post.pk %}">
                         <h4 class="text-white font-weight-medium">{{ post.techbeatrice_subjects_title|truncatechars:15}}</h4>
                         <span>{{ post.techbeatrice_subjects_description|truncatechars:15}}</span>
                     </a>
@@ -80,13 +78,15 @@
                 {% for second_techbeatrice in second_techbeatrices %}
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{% static 'img/course-1.jpg' %}"height="220px" alt="">
+                        {% if second_techbeatrice.techbeatrice_courses_img %}
+                        <img class="img-fluid" src="{{ second_techbeatrice.techbeatrice_courses_img.url }}"height="220px" alt="">
+                        {% endif %}
                         <div class="bg-secondary p-4">
                             <a class="h5" href="">{{ second_techbeatrice.techbeatrice_courses_title|truncatechars:24 }}</a><br><br>
                             <p>{{ second_techbeatrice.techbeatrice_courses_description |truncatechars:75}}</p>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h5 class="m-0">$99</h5>
+                                    <h5 class="m-0">${{ second_techbeatrice.techbeatrice_courses_cost_price}}</h5>
                                     <div class="btn-wrapper">
                                         <a href="" class="btn btn-primary"style="border-radius: 10px;">Read More</a>
                                     </div>
