@@ -30,7 +30,15 @@ class ArticleDetailView(DetailView):
         object = get_object_or_404(Techbeatrice_Subjects, pk=pk)
         return render(request, 'article_detail.html', {'detail': object})
         
-
+#The second ArticleDetailView page of Techbeatrice group   
+class SecondTechbeatriceDetailViewArticleDetailView(DetailView):
+    model = Techbeatrice_Courses_PostModel
+    template_name = 'techbeatrice/second_article_detail.html'    
+    context_object_name = 'second_techbeatrices'
+    def SecondTechbeatriceDetailViewArticleDetailView(request, pk):
+        object = get_object_or_404(Techbeatrice_Courses_PostModel, pk=pk)
+        return render(request, 'second_article_detail.html', {'second_detail': object})
+    
 #About page of the deus magnus blog app
 def AboutView (request):
     return render(request, 'techbeatrice/about_us.html', {})

@@ -83,7 +83,7 @@
                         <img class="img-fluid" src="{{ second_techbeatrice.techbeatrice_courses_img.url }}"height="220px" alt="">
                         {% endif %}
                         <div class="bg-secondary p-4">
-                            <a class="h5" href="">{{ second_techbeatrice.techbeatrice_courses_title|truncatechars:24 }}</a><br><br>
+                            <a class="h5" href="{% url 'second_detail' second_techbeatrice.pk %}">{{ second_techbeatrice.techbeatrice_courses_title|truncatechars:24 }}</a><br><br>
                             <p>{{ second_techbeatrice.techbeatrice_courses_description |truncatechars:75}}</p>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
