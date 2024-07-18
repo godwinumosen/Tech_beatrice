@@ -43,5 +43,28 @@ class SecondTechbeatriceDetailViewArticleDetailView(DetailView):
 def AboutView (request):
     return render(request, 'techbeatrice/about_us.html', {})
 
+# The Contact view been implemented
 def ContactView (request):
-    return render(request, 'techbeatrice/contact.html', {})
+    email='info@deusmagnus.com'
+    if request.method == 'POST':
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message_subject = request.POST['message-subject']
+        message = request.POST['message'] 
+        messages.success(request, f'Your email was Successfully sent to Deus Magnus {message_name}..!')
+        return redirect('/message')
+    else:
+        context={
+            'email':email
+        }
+        return render(request, 'techbeatrice/contact.html', {})
+    
+#This category is for the Whatsapp API for Techbeatrice
+def deus_magnus_whatsapp_message(request):
+    techbeatrice_whatsapp_number = '+23480'
+    techbeatrice_whatsapp_link = f'https://api.whatsapp.com/send?phone={techbeatrice_whatsapp_number}'
+    context = {'whatsapp_link': techbeatrice_whatsapp_link}
+    return render(request, 'techbeatrice_kwhatsapp_message.html', context)
+
+'''def message (request):
+    return render (request, 'techbeatrice/message.html', {})'''
