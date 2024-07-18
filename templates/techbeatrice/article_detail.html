@@ -12,7 +12,7 @@
                 <div class="d-inline-flex text-white">
                     <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Single</p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Our Courses</a></p>
                 </div>
             </div>
         </div>
@@ -30,15 +30,11 @@
                         <h1 class="mb-5">{{ object.techbeatrice_subjects_title }}</h1>
                         <img class="img-fluid rounded w-100 mb-4" src="{{ object.techbeatrice_subjects_img.url }}" alt="Image">
                         <p>{{ object.techbeatrice_subjects_description }}</p>
+                        <h3 class="m-0 text-uppercase"><a class="text-black" href="{% url 'home' %}">Our Courses</a></h3>
                       
-                        <h2 class="mb-4">Est dolor lorem et ea</h2>
-                        <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="{% static 'img/blog-1.jpg' %}" alt="Image">
-                        <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
-                            est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet
-                            tempor sea kasd clita ipsum et. Takimata kasd diam justo est eos erat aliquyam et ut. Ea sed
-                            sadipscing no justo et eos labore, gubergren ipsum magna dolor lorem dolore, elitr aliquyam
-                            takimata sea kasd dolores diam, amet et est accusam labore eirmod vero et voluptua. Amet
-                            labore clita duo et no. Rebum voluptua magna eos magna, justo gubergren labore sit.</p>
+                        <h2 class="mb-4">{{ object.techbeatrice_subjects_sub_title }}</h2>
+                        <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="{{ object.techbeatrice_subjects_sub_img.url }}" alt="Image">
+                        <p>{{ object.techbeatrice_subjects_sub_description }}</p>
                    
                     </div>
 
