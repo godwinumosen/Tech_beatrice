@@ -42,3 +42,6 @@ class SecondTechbeatriceDetailViewArticleDetailView(DetailView):
 #About page of the deus magnus blog app
 def AboutView (request):
     return render(request, 'techbeatrice/about_us.html', {})
+
+def ContactView (request):
+    return render(request, 'techbeatrice/contact.html', {})
