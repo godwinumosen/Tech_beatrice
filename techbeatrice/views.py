@@ -22,7 +22,7 @@ class HomeView(ListView):
         context['second_techbeatrices'] = Techbeatrice_Courses_PostModel.objects.all()
         return context
     
- #The first Techbeatrice ArticleDetailView page 
+ #The first Techbeatrice ArticleDetailView page.
 class ArticleDetailView(DetailView):
     model = Techbeatrice_Subjects
     template_name = 'techbeatrice/article_detail.html'
