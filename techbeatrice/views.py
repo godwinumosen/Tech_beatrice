@@ -66,5 +66,5 @@ def deus_magnus_whatsapp_message(request):
     context = {'whatsapp_link': techbeatrice_whatsapp_link}
     return render(request, 'techbeatrice_kwhatsapp_message.html', context)
 
-'''def message (request):
-    return render (request, 'techbeatrice/message.html', {})'''
+def message (request):
+    return render (request, 'techbeatrice/message.html', {})
