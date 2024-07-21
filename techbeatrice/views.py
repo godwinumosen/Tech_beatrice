@@ -60,7 +60,7 @@ def ContactView (request):
         return render(request, 'techbeatrice/contact.html', {})
     
 #This category is for the Whatsapp API for Techbeatrice
-def deus_magnus_whatsapp_message(request):
+def techbeatrice_whatsapp_message(request):
     techbeatrice_whatsapp_number = '+23480'
     techbeatrice_whatsapp_link = f'https://api.whatsapp.com/send?phone={techbeatrice_whatsapp_number}'
     context = {'whatsapp_link': techbeatrice_whatsapp_link}
