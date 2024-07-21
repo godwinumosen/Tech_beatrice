@@ -25,18 +25,18 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block">
-        <div class="row align-items-center py-4 px-xl-5">
+        <div class="row align-items-center py-2 px-xl-4">
             <div class="col-lg-3">
-                <a href="{% url 'home' %}" class="text-decoration-none">
-                    <img src="{% static 'img/logo.jpg' %}"width="100" height="60"style="border-radius: 10px;" alt="">
-                </a>
+                <a class="d-flex align-items-center justify-content-between bg-secondary "  href="#navbar-vertical" style="height: 67px; padding:30px;">
+                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Techbeatrice</h5> 
+                </a> 
             </div>
             <div class="col-lg-3 text-right">
                 <div class="d-inline-flex align-items-center">
-                    <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
+                    <a><i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
                     <div class="text-left">
                         <h6 class="font-weight-semi-bold mb-1">Our Office</h6>
-                        <small>123 Street, Lagos, Nigeria</small>
+                        <small>123 Street, Lagos, Nigeria</small></a>
                     </div>
                 </div>
             </div>
@@ -64,15 +64,12 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid">
-        <div class="row border-top px-xl-5">
-            <div class="">
-                <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none"  href="#navbar-vertical" style="height: 67px; padding:30px;">
-                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Techbeatrice</h5> 
-                </a>
-                
-            </div>
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+        <div class="row border-top px-xl-4">  
+            <div class="col-lg-11">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-0 py-lg-1 px-0">
+                    <a href="{% url 'home' %}" class="text-decoration-none">
+                        <img src="{% static 'img/logo.jpg' %}"width="120" height="60"style="border-radius:10px;" alt="logo">
+                    </a>
                     <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
