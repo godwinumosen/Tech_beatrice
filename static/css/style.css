@@ -4852,12 +4852,12 @@ a.badge:hover, a.badge:focus {
 
 .badge-primary {
   color: #fff;
-  background-color: #FF6600;
+  background-color: #0047AB;
 }
 
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: #cc5200;
+  background-color: #0047AB;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
@@ -9519,11 +9519,11 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #FF6600 !important;
+  color: #0047AB !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #b34700 !important;
+  color: #0047AB !important;
 }
 
 .text-secondary {
@@ -9766,7 +9766,7 @@ h6,
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-  color: #FF6600;
+  color: #0047AB;
 }
 
 @media (max-width: 991.98px) {
@@ -9811,7 +9811,7 @@ h6,
 }
 
 .carousel-indicators .active {
-  background: #FF6600;
+  background: #0047AB;
 }
 
 @media (max-width: 991.98px) {
