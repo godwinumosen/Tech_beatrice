@@ -45,7 +45,7 @@ def AboutView (request):
 
 # The Contact view been implemented
 def ContactView (request):
-    email='info@deusmagnus.com'
+    email='info@techbea.com'
     if request.method == 'POST':
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
@@ -56,7 +56,7 @@ def ContactView (request):
     else:
         context={
             'email':email
-        }
+        } 
         return render(request, 'techbeatrice/contact.html', {})
     
 #This category is for the Whatsapp API for Techbeatrice
