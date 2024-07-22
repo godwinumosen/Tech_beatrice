@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView,ListView
 from django.contrib.auth.decorators import login_required
+from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Techbeatrice_Instructor
 from django.contrib import messages
 from django.urls import reverse
 from django.urls import reverse_lazy
-from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects
+
 # Create your views here.
 '''def home (request):
     return render (request, 'techbeatrice/home.html' )'''
@@ -68,3 +69,8 @@ def techbeatrice_whatsapp_message(request):
 
 def message (request):
     return render (request, 'techbeatrice/message.html', {})
+
+#the InstructorView for techbeatrice page
+class InstructorView(ListView): 
+    model = Techbeatrice_Instructor 
+    template_name = 'techbeatrice/instructor.html' 
