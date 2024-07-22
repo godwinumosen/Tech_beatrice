@@ -1,8 +1,8 @@
 # Register your models here.
 from django.contrib import admin
 # Register your models here.
-from . import models
-from .models import Techbeatrice_Subjects,Techbeatrice_Courses_PostModel
+from . import models 
+from .models import Techbeatrice_Subjects,Techbeatrice_Courses_PostModel,Techbeatrice_Instructor
 
 #The Techbeatrice_Subjects post model admin of Techbeatrice
 class Techbeatrice_SubjectsModelAdmin (admin.ModelAdmin):
@@ -17,3 +17,9 @@ class Techbeatrice_Courses_ModelAdmin (admin.ModelAdmin):
     list_display = ['techbeatrice_courses_title','techbeatrice_courses_description',
                     'techbeatrice_courses_img','techbeatrice_courses_author','techbeatrice_courses_cost_price']
 admin.site.register(Techbeatrice_Courses_PostModel, Techbeatrice_Courses_ModelAdmin)
+
+# The Instructor model for The techbeatrice Model category
+class Techbeatrice_Instructor_ModelAdmin (admin.ModelAdmin):
+    prepopulated_fields = {'techbeatrice_instructor_slug': ('techbeatrice_instructor_name',)}
+    list_display = ['techbeatrice_instructor_name','techbeatrice_instructor_description','techbeatrice_instructor_img']
+admin.site.register(Techbeatrice_Instructor, Techbeatrice_Instructor_ModelAdmin)

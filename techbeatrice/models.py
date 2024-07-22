@@ -44,3 +44,23 @@ class Techbeatrice_Courses_PostModel(models.Model):
     
     def get_absolute_url(self):
         return reverse('home')
+    
+
+# The Instructor model for The techbeatrice Model category
+class Techbeatrice_Instructor(models.Model):
+    techbeatrice_instructor_name = models.CharField(max_length =255, blank=True, null=True)
+    techbeatrice_instructor_description = models.TextField()
+    techbeatrice_instructor_img = models.ImageField(upload_to ='instructor_img/',blank=True,null=True)
+    techbeatrice_instructor_slug = models.SlugField (max_length =255,blank=True, null=True)
+    techbeatrice_instructor_publish_date = models.DateTimeField (auto_now_add= True)
+    techbeatrice_instructor_author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+         
+    class Meta:
+        ordering =['-techbeatrice_instructor_publish_date']
+    
+    def __str__(self):
+        return self.techbeatrice_instructor_name + ' | ' + str(self.techbeatrice_instructor_author)
+    
+    def get_absolute_url(self):
+        return reverse('home')
