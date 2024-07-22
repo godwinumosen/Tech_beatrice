@@ -8,11 +8,11 @@
     <div class="container-fluid page-header" style="margin-bottom: 90px;">
         <div class="container">
             <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
-                <h3 class="display-4 text-white text-uppercase">Teachers</h3>
+                <h3 class="display-4 text-white text-uppercase">Instructors</h3>
                 <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Teachers</p>
+                    <p class="m-0 text-uppercase"></p><a class="text-white" href="{% url 'contact' %}">Contact</a></p>
                 </div>
             </div>
         </div>
@@ -32,12 +32,13 @@
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="{{ post.techbeatrice_instructor_img.url }}" alt="">
+                            <a href=""><img class="img-fluid" src="{{ post.techbeatrice_instructor_img.url }}"height="225px" alt=""></a>
                         </div>
                         <div class="bg-secondary p-4">
-                            <h5>{{ post.techbeatrice_instructor_name }}</h5>
-                            <h5>{{ post.techbeatrice_instructor_position }}</h5>
-                            <p class="m-0">{{ post.techbeatrice_instructor_description }}</p>
+                            <a href=""> <h5>{{ post.techbeatrice_instructor_name|truncatechars:15}}</h5></a>
+                            <h6>{{ post.techbeatrice_instructor_position|truncatechars:15}}</h6><hr>
+                            <p class="m-0">{{ post.techbeatrice_instructor_description|truncatechars:20}}</p><br>
+                            <a href="" class="btn btn-primary"style="border-radius: 10px;">View More</a>
                         </div>
                     </div>
                 </div>
