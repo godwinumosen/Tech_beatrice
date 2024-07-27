@@ -11,6 +11,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
+            messages.success(request, ("You Have Successufully Login To Techbeatrice..."))
             return redirect('home')
         else:
             messages.success(request, ("There Was An Error Loggin In, Try Again..."))
