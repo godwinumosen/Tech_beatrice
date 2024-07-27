@@ -17,9 +17,26 @@ def login_user(request):
             return redirect('login')    
     else:
         return render(request, 'authenticate/login.html', {})
-
+#The is for logout user from the page
 def logout_user(request):
     logout(request)
-    messages.success(request, ("You"))
+    messages.success(request, ("You Have Been Logout Successfully"))
     return redirect('home')
 
+#User registration from the sign up page
+def register_user(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            messages.success(request, ("Registration Successful.."))
+            return redirect ('home')
+    else:
+        form = UserCreationForm()    
+    return render (request, 'authenticate/register_user.html',{
+        'form':form,
+    })

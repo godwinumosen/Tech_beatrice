@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}<br><br>
+
+
+<div class="container">
+    {% if form.errors %}
+    <p>There Was An Error With Your Form...</p>
+    {% endif %}
+ <h1> Register</h1>
+ <br>
+    <form action="{% url 'register_user' %}" method = POST>
+        {% csrf_token %}
+
+        {{ form }}
+         
+           <br> <input type ="submit"class="btn btn-secondary"value ="Submit" >
+    </form>
+</div>
+<br><br>
+{% endblock  %}
