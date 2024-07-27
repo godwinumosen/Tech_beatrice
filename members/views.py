@@ -14,7 +14,7 @@ def login_user(request):
             messages.success(request, ("You Have Successufully Login To Techbeatrice..."))
             return redirect('home')
         else:
-            messages.success(request, ("There Was An Error Loggin In, Try Again..."))
+            messages.success(request, ("There Was An Error Loggin, Try Again or Register If You Don't Have An Account With Techbetrice..."))
             return redirect('login')    
     else:
         return render(request, 'authenticate/login.html', {})
@@ -34,8 +34,8 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request, ("Registration Successful.."))
-            return redirect ('home')
+            messages.success(request, ("Registration Successful Login To Techbeatrice.."))
+            return redirect ('login')
     else:
         form = UserCreationForm()    
     return render (request, 'authenticate/register_user.html',{
