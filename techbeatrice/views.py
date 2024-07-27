@@ -74,3 +74,11 @@ def message (request):
 class InstructorView(ListView): 
     model = Techbeatrice_Instructor 
     template_name = 'techbeatrice/instructor.html' 
+
+#The Techbeatrice Instructor ArticleDetailView page.
+class InstructorArticleDetailView(DetailView):
+    model = Techbeatrice_Instructor
+    template_name = 'techbeatrice/instructor_article_detail.html'
+    def InstructorArticleDetailView(request, pk):  
+        object = get_object_or_404(Techbeatrice_Instructor, pk=pk)
+        return render(request, 'instructor_article_detail.html', {'detail': object})

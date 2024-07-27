@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{ object.techbeatrice_instructor_name }} {% endblock %}
+
+{% block content %}
+
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">{{ object.techbeatrice_instructor_name|truncatechars:9}}</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Our Courses</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Detail Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="mb-5">
+                        <h6 class="text-primary mb-3">{{ object.techbeatrice_instructor_publish_date }}</h6>
+                        <h1 class="mb-5">{{ object.techbeatrice_instructor_name }}</h1>
+                        <img class="img-fluid rounded w-100 mb-4" src="{{ object.techbeatrice_instructor_img.url }}" alt="Image">
+                        <p>{{ object.techbeatrice_instructor_description }}</p>
+                        <h3 class="m-0 text-uppercase"><a class="text-black" href="{% url 'home' %}"> View Courses</a></h3>
+                     
+                    </div>
+                    <div class="btn-wrapper">
+                        <a href=""onclick="history.back(); return false;" class="btn btn-primary"style="border-radius: 10px;"><i class="fa fa-angle-left">Back</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Detail End -->
+
+
+{% endblock %}
