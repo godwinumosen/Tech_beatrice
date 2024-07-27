@@ -7,7 +7,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('',include ('techbeatrice.urls')),
+    path('',include ('techbeatrice.urls')),
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
 ]
 
 admin.site.site_header = "Cyber Gradient The Admin "
