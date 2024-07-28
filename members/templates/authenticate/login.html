@@ -7,6 +7,7 @@
 <div class="container">
  <h1> Login</h1>
  <br>
+ <div class="shadow p-5 mb-5 bg-body rounded">
     <form action="" method = POST>
         {% csrf_token %}
         <form>
@@ -21,6 +22,7 @@
             <input type ="submit"class="btn btn-primary"value ="Submit" > I don't have an account
             <a href="{% url 'register_user' %}" class="btn btn-secondary">Signup</a>
     </form>
+</div>
 </div>
 <br><br>
 {% endblock  %}

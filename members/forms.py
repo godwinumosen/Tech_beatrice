@@ -11,7 +11,7 @@ class RegisterUserForm(UserCreationForm):
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
-
+#Adding the default username and password 1 and password 2
     def __init__(self, *args, **kwargs):
         super(RegisterUserForm, self).__init__( *args, **kwargs)
 
