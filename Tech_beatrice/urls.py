@@ -13,7 +13,7 @@ urlpatterns = [
 ]
 
 admin.site.site_header = "Cyber Gradient The Admin "
-admin.site.site_title = " TechBeatrice Academy "
+admin.site.site_title = " TechBeatrice_Academy "
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
