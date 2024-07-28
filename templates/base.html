@@ -28,7 +28,7 @@
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center py-2 px-xl-4">
             <div class="col-lg-3">
-                <a class="d-flex align-items-center justify-content-between bg-secondary "  href="#navbar-vertical" style="height: 67px; padding:30px;">
+                <a class="d-flex align-items-center justify-content-between bg-secondary "href="{% url 'home'%}" style="height: 67px; padding:30px;">
                     <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Techbeatrice</h5> 
                 </a> 
             </div>
@@ -78,7 +78,7 @@
                         <div class="navbar-nav py-0">
                             <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
                             <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                            <a href="course.html" class="nav-item nav-link">Courses</a>
+                            <a href="{% url 'techbeatrice_courses' %}" class="nav-item nav-link">Courses</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online Application </a>
                                 <div class="dropdown-menu rounded-0 m-0">
