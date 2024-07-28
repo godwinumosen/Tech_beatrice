@@ -17,8 +17,9 @@
     <form action="{% url 'register_user' %}" method = POST>
         {% csrf_token %}
         {{ form.as_p}}    
-           <br> <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
-           <input type ="submit"class="btn btn-primary"value ="Submit" >
+        
+           <br><input type ="submit"class="btn btn-primary"value ="Submit" > I have an account 
+           <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
     </form>
 </div>
 <br><br>
