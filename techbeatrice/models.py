@@ -71,7 +71,6 @@ class Techbeatrice_Instructor(models.Model):
 class Courses(models.Model):
     courses_title = models.CharField(max_length =255, blank=True, null=True)
     courses_description = models.TextField()
-    courses_position = models.CharField(max_length =255, blank=True, null=True)
     courses_img = models.ImageField(upload_to ='courses_img/',blank=True,null=True)
     courses_slug = models.SlugField (max_length =255,blank=True, null=True)
     courses_publish_date = models.DateTimeField (auto_now_add= True)
