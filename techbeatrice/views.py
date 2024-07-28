@@ -62,7 +62,7 @@ def AboutView (request):
     
 #This category is for the Whatsapp API for Techbeatrice
 def techbeatrice_whatsapp_message(request):
-    techbeatrice_whatsapp_number = '+23480'
+    techbeatrice_whatsapp_number = '+2340064308254'
     techbeatrice_whatsapp_link = f'https://api.whatsapp.com/send?phone={techbeatrice_whatsapp_number}'
     context = {'whatsapp_link': techbeatrice_whatsapp_link}
     return render(request, 'techbeatrice_kwhatsapp_message.html', context)
@@ -88,5 +88,6 @@ class Techbeatrice_Courses(ListView):
     model = Courses 
     template_name = 'techbeatrice/courses.html' 
 
+#The enroll section using function only 
 def Techbeatrice_Enroll(request):
     return render(request, 'techbeatrice/enroll_application.html', {})
