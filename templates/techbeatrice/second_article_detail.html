@@ -12,7 +12,7 @@
                 <div class="d-inline-flex text-white">
                     <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Our Courses</a></p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'techbeatrice_courses' %}">Our Courses</a></p>
                 </div>
             </div>
         </div>
@@ -27,10 +27,10 @@
                 <div class="col-lg-8">
                     <div class="mb-5">
                         <h6 class="text-primary mb-3">{{ object.techbeatrice_courses_publish_date }}</h6>
-                        <h1 class="mb-5">{{ object.techbeatrice_subjects_title }}</h1>
+                        <h1 class="mb-5">{{ object.techbeatrice_courses_title }}</h1>
                         <img class="img-fluid rounded w-100 mb-4" src="{{ object.techbeatrice_courses_img.url }}" alt="Image">
                         <p>{{ object.techbeatrice_courses_description }}</p>
-                        <h3 class="m-0 text-uppercase"><a class="text-black" href="{% url 'home' %}">Our Courses</a></h3>
+                        <h6 class="m-0 text-uppercase"><a class="text-black" href="{% url 'techbeatrice_courses' %}">View Courses</a></h6><br>
                       
                         <h2 class="mb-4">{{ object.techbeatrice_courses_sub_title }}</h2>
                         <img class="img-fluid rounded w-50 float-left mr-4 mb-3" src="{{ object.techbeatrice_courses_sub_img.url }}" alt="Image">
@@ -43,67 +43,39 @@
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <!-- Author Bio -->
-                 
 
-    
-
-                    <!-- Category List -->
-                    <div class="mb-5">
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Design</a>
-                                <span class="badge badge-primary badge-pill">150</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Web Development</a>
-                                <span class="badge badge-primary badge-pill">131</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Online Marketing</a>
-                                <span class="badge badge-primary badge-pill">78</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Keyword Research</a>
-                                <span class="badge badge-primary badge-pill">56</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                <a href="" class="text-decoration-none h6 m-0">Email Marketing</a>
-                                <span class="badge badge-primary badge-pill">98</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Recent Post -->
-                    <div class="mb-5">
-                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h3>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="{% static 'img/blog-80x80.jpg' %}" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="{% static 'img/blog-80x80.jpg'%}" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
-                        <a class="d-flex align-items-center text-decoration-none mb-3" href="">
-                            <img class="img-fluid rounded" src="{% static 'img/blog-80x80.jpg' %}" alt=""> 
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
-                    </div>
+            <!-- Category List -->
+            <div class="mb-5">
+                <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Courses Categories</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="{% url 'techbeatrice_courses' %}" class="text-decoration-none h6 m-0">CyberSecurity</a>
+                        <a href="{% url 'techbeatrice_courses' %}"><span class="badge badge-primary badge-pill">View</span></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="{% url 'techbeatrice_courses' %}" class="text-decoration-none h6 m-0">Web Development</a>
+                        <a href="{% url 'techbeatrice_courses' %}"><span class="badge badge-primary badge-pill">View</span></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="{% url 'techbeatrice_courses' %}" class="text-decoration-none h6 m-0">Mobile Development</a>
+                        <a href="{% url 'techbeatrice_courses' %}"><span class="badge badge-primary badge-pill">View</span></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="{% url 'techbeatrice_courses' %}" class="text-decoration-none h6 m-0">Research</a>
+                        <a href="{% url 'techbeatrice_courses' %}"><span class="badge badge-primary badge-pill">View</span></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <a href="{% url 'techbeatrice_courses' %}" class="text-decoration-none h6 m-0">UI & UX</a>
+                        <a href="{% url 'techbeatrice_courses' %}"><span class="badge badge-primary badge-pill">View</span></a>
+                    </li>
+                </ul>
+            </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Detail End -->
+
 
 
 {% endblock %}

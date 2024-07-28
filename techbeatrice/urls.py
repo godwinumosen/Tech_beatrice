@@ -14,6 +14,7 @@ urlpatterns = [
     path('contact/', views.ContactView, name='contact'),
     path('techbeatrice_courses/', Techbeatrice_Courses.as_view(), name='techbeatrice_courses'),
     path('message/', views.message, name='message'),
+    path('enroll_application/', views.Techbeatrice_Enroll, name='enroll_application')
 ]
 
 

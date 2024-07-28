@@ -87,3 +87,6 @@ class InstructorArticleDetailView(DetailView):
 class Techbeatrice_Courses(ListView): 
     model = Courses 
     template_name = 'techbeatrice/courses.html' 
+
+def Techbeatrice_Enroll(request):
+    return render(request, 'techbeatrice/enroll_application.html', {})

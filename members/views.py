@@ -21,7 +21,7 @@ def login_user(request):
 #The is for logout user from the page
 def logout_user(request):
     logout(request)
-    messages.success(request, ("You Have Been Logout Successfully"))
+    messages.success(request, ("You Have Been Logout Successfully..."))
     return redirect('home')
 
 #User registration from the sign up page
