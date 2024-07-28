@@ -65,3 +65,23 @@ class Techbeatrice_Instructor(models.Model):
     
     def get_absolute_url(self):
         return reverse('home')
+    
+
+# The techbeatrice_courses model for The techbeatrice Model category
+class Courses(models.Model):
+    courses_title = models.CharField(max_length =255, blank=True, null=True)
+    courses_description = models.TextField()
+    courses_position = models.CharField(max_length =255, blank=True, null=True)
+    courses_img = models.ImageField(upload_to ='courses_img/',blank=True,null=True)
+    courses_slug = models.SlugField (max_length =255,blank=True, null=True)
+    courses_publish_date = models.DateTimeField (auto_now_add= True)
+    courses_author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering =['-courses_publish_date']
+    
+    def __str__(self):
+        return self.courses_title + ' | ' + str(self.courses_author)
+    
+    def get_absolute_url(self):
+        return reverse('home')

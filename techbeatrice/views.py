@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView,ListView
 from django.contrib.auth.decorators import login_required
-from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Techbeatrice_Instructor
+from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Techbeatrice_Instructor,Courses
 from django.contrib import messages
 from django.urls import reverse
 from django.urls import reverse_lazy
@@ -11,6 +11,22 @@ from django.urls import reverse_lazy
     return render (request, 'techbeatrice/home.html' )'''
 def base (request):
     return render(request,"base.html")
+
+# The Contact view been implemented
+def ContactView (request):
+    email='info@techbea.com'
+    if request.method == 'POST':
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message_subject = request.POST['message-subject']
+        message = request.POST['message'] 
+        messages.success(request, f'Your email was Successfully sent to Deus Magnus {message_name}..!')
+        return redirect('/message')
+    else:
+        context={
+            'email':email
+        } 
+        return render(request, 'techbeatrice/contact.html', {})
 #The main Techbeatrice HomeView page
 class HomeView(ListView): 
     model = Techbeatrice_Subjects 
@@ -43,22 +59,6 @@ class SecondTechbeatriceDetailViewArticleDetailView(DetailView):
 #About page of the deus magnus blog app
 def AboutView (request):
     return render(request, 'techbeatrice/about_us.html', {})
-
-# The Contact view been implemented
-def ContactView (request):
-    email='info@techbea.com'
-    if request.method == 'POST':
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
-        message_subject = request.POST['message-subject']
-        message = request.POST['message'] 
-        messages.success(request, f'Your email was Successfully sent to Deus Magnus {message_name}..!')
-        return redirect('/message')
-    else:
-        context={
-            'email':email
-        } 
-        return render(request, 'techbeatrice/contact.html', {})
     
 #This category is for the Whatsapp API for Techbeatrice
 def techbeatrice_whatsapp_message(request):
@@ -82,3 +82,8 @@ class InstructorArticleDetailView(DetailView):
     def InstructorArticleDetailView(request, pk):  
         object = get_object_or_404(Techbeatrice_Instructor, pk=pk)
         return render(request, 'instructor_article_detail.html', {'detail': object})
+    
+#the Techbeatrice_Courses for techbeatrice navbar link
+class Techbeatrice_Courses(ListView): 
+    model = Courses 
+    template_name = 'techbeatrice/courses.html' 
