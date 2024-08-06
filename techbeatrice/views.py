@@ -93,6 +93,8 @@ class Techbeatrice_Courses(ListView):
 def Techbeatrice_Enroll(request):
     return render(request, 'techbeatrice/enroll_application.html', {})
 
-class Under_enroll(ListView): 
+
+class Under_enroll(ListView):
     model = Under_Enroll
-    template_name = 'techbeatrice/enroll_application.html' 
+    template_name = 'techbeatrice/enroll_application.html'
+    context_object_name = 'items'

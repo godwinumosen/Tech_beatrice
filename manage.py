@@ -20,3 +20,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+from techbeatrice.models import Under_Enroll
+print(Under_Enroll.objects.all())
