@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView,ListView
 from django.contrib.auth.decorators import login_required
-from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Techbeatrice_Instructor,Courses
+from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Techbeatrice_Instructor,Courses,Under_Enroll
 from django.contrib import messages
 from django.urls import reverse
 from django.urls import reverse_lazy
@@ -88,6 +88,11 @@ class Techbeatrice_Courses(ListView):
     model = Courses 
     template_name = 'techbeatrice/courses.html' 
 
+
 #The enroll section using function only 
 def Techbeatrice_Enroll(request):
     return render(request, 'techbeatrice/enroll_application.html', {})
+
+class Under_enroll(ListView): 
+    model = Under_Enroll
+    template_name = 'techbeatrice/enroll_application.html' 

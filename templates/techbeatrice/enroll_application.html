@@ -17,10 +17,8 @@
         </div>
     </div>
     <!-- Header End -->
-    
-    
-    
-    <!-- Topbar Start -->
+
+    <!-- whatsapp techbeatricesolutions -->
     <div class="boxed boxedp4">
         <div class="row contactv2 text-center">
             <div class="col-md-4">
@@ -57,4 +55,25 @@
             </div><!-- end col -->    
         </div><!-- end contactv2 -->
 
+
+
+
+<div class="container">
+    <div class="shadow p-5 mb-5 bg-body rounded">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        {% for post in object_list %}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree{{ forloop.counter }}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              {{ post.under_enroll_title }}
+            </button>
+          </h2>
+          <div id="flush-collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">{{ post.under_enroll_description }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+     </div>
+    </div>
     {% endblock %}

@@ -19,7 +19,7 @@
                      <div class="rounded overflow-hidden mb-2">
                         <img class="img-fluid" src="{{ post.courses_img.url }}"style="height:200px;"alt="">
                     <div class="bg-secondary p-4">
-                    <a class="h5" href="">{{ post.courses_title|truncatechars:30}}</a><br><br>
+                    <a class="h5" href="{% url 'enroll_application' %}">{{ post.courses_title|truncatechars:30}}</a><br><br>
                     <p>{{ post.courses_description |truncatechars:75}}</p>
                     <div class="border-top mt-4 pt-4">
                         <div class="d-flex justify-content-between">

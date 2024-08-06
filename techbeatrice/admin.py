@@ -1,7 +1,8 @@
 # Register your models here.
 from django.contrib import admin
 from . import models 
-from .models import Techbeatrice_Subjects,Techbeatrice_Courses_PostModel,Techbeatrice_Instructor,Courses
+from .models import Techbeatrice_Subjects,Techbeatrice_Courses_PostModel
+from .models import Techbeatrice_Instructor,Courses,Under_Enroll
 #from .models import 
 
 #The Techbeatrice_Subjects post model admin of Techbeatrice
@@ -29,3 +30,7 @@ class Courses_Admin (admin.ModelAdmin):
     prepopulated_fields = {'courses_slug': ('courses_title',)}
     list_display = ['courses_title','courses_description','courses_img']
 admin.site.register(Courses, Courses_Admin)
+
+class Under_Enroll_Admin (admin.ModelAdmin):
+    list_display = ['under_enroll_title','under_enroll_description',]
+admin.site.register(Under_Enroll, Under_Enroll_Admin)

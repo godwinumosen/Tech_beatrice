@@ -84,3 +84,15 @@ class Courses(models.Model):
     
     def get_absolute_url(self):
         return reverse('home')
+    
+# this model is for under_enrolling page
+class Under_Enroll(models.Model):
+    under_enroll_title = models.CharField(max_length =255, blank=True, null=True)
+    under_enroll_description = models.TextField()
+    under_enroll_author = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.under_enroll_title 
+    
+    def get_absolute_url(self):
+        return reverse('home')
