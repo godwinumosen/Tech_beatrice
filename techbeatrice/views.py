@@ -90,8 +90,8 @@ class Techbeatrice_Courses(ListView):
 
 
 #The enroll section using function only 
-def Techbeatrice_Enroll(request):
-    return render(request, 'techbeatrice/enroll_application.html', {})
+'''def Techbeatrice_Enroll(request):
+    return render(request, 'techbeatrice/enroll_application.html', {})'''
 
 
 class Under_enroll(ListView):
