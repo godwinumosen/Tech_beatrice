@@ -17,6 +17,9 @@ urlpatterns = [
     #path('enroll_application/', views.Techbeatrice_Enroll, name='enroll_application'),
     path('under_enrol/', Under_enroll.as_view(), name='under_enrol'),
     path('it_support/', views.ItSupport, name='it_support'),
+    path('it_repairs/', views.ItRepairs, name='it_repairs'),
+    path('it_procurement_and_sales/', views.ItProcurementAndSales, name='it_procurement_and_sales'),
+    path('general_it_services/', views.GeneralITServices, name='general_it_services'),
 ]
 
 

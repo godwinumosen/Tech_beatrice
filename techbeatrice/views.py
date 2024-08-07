@@ -99,3 +99,12 @@ class Under_enroll(ListView):
 #The ItSupport section using function base view only 
 def ItSupport(request):
     return render(request, 'techbeatrice/it_support.html', {})
+#The ItRepairs section using function base view only 
+def ItRepairs(request):
+    return render(request, 'techbeatrice/it_repairs.html', {})
+#The It Procurement And Sales section using function base view only 
+def ItProcurementAndSales(request):
+    return render(request, 'techbeatrice/it_procurement_and_sales.html', {})
+#The General IT Services section using function base view only 
+def GeneralITServices(request):
+    return render(request, 'techbeatrice/general_it_services.html', {})
