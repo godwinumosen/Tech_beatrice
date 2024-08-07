@@ -88,13 +88,14 @@ class Techbeatrice_Courses(ListView):
     model = Courses 
     template_name = 'techbeatrice/courses.html' 
 
-
 #The enroll section using function only 
 '''def Techbeatrice_Enroll(request):
     return render(request, 'techbeatrice/enroll_application.html', {})'''
-
-
 class Under_enroll(ListView):
     model = Under_Enroll
     template_name = 'techbeatrice/enroll_application.html'
     context_object_name = 'items'
+
+#The ItSupport section using function base view only 
+def ItSupport(request):
+    return render(request, 'techbeatrice/it_support.html', {})

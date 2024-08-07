@@ -16,6 +16,7 @@ urlpatterns = [
     path('message/', views.message, name='message'),
     #path('enroll_application/', views.Techbeatrice_Enroll, name='enroll_application'),
     path('under_enrol/', Under_enroll.as_view(), name='under_enrol'),
+    path('it_support/', views.ItSupport, name='it_support'),
 ]
 
 
