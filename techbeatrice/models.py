@@ -3,7 +3,21 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
 
+#the techbeatrice_first_img_carousel
+class Techbeatrice_first_img(models.Model):      
+    techbeatrice_first_img_title = models.CharField(max_length =205, blank=True, null=True)
+    techbeatrice_first_img_description = models.TextField()
+    techbeatrice_subjects_img = models.ImageField(upload_to ='tech_first_img/',blank=True,null=True)
+    techbeatrice_first_img_slug = models.CharField(max_length =205, blank=True, null=True)
+    techbeatrice_first_img_publish_date = models.DateTimeField (auto_now_add= True)
+    techbeatrice_first_img_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering =['-techbeatrice_first_img_publish_date']
+    def __str__(self):
+        return self.techbeatrice_first_img_title + ' | ' + str(self.techbeatrice_first_img_author)
+    def get_absolute_url(self):
+        return reverse('home')
 class Techbeatrice_Subjects(models.Model):      
     techbeatrice_subjects_title = models.CharField(max_length =205, blank=True, null=True)
     techbeatrice_subjects_sub_title = models.CharField(max_length =205, blank=True, null=True)

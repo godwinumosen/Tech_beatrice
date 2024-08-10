@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView,ListView
 from django.contrib.auth.decorators import login_required
-from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Techbeatrice_Instructor,Courses,Under_Enroll
+from .models import Techbeatrice_Courses_PostModel,Techbeatrice_Subjects,Courses,Under_Enroll
+from .models import Techbeatrice_first_img,Techbeatrice_Instructor
 from django.contrib import messages
 from django.urls import reverse
 from django.urls import reverse_lazy
@@ -35,6 +36,8 @@ class HomeView(ListView):
     #This model is for the second Techbeatrice_Courses_PostModel sub category of the home page
     def get_context_data(self, **kwargs):  
         context = super().get_context_data(**kwargs)
+    #the first techbeatrice home image car
+        context['first_img'] = Techbeatrice_first_img.objects.all()   
     #context['user'] = self.request.user
         context['second_techbeatrices'] = Techbeatrice_Courses_PostModel.objects.all()
         return context

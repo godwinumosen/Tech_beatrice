@@ -2,8 +2,14 @@
 from django.contrib import admin
 from . import models 
 from .models import Techbeatrice_Subjects,Techbeatrice_Courses_PostModel
-from .models import Techbeatrice_Instructor,Courses,Under_Enroll
+from .models import Techbeatrice_Instructor,Courses,Under_Enroll,Techbeatrice_first_img
 #from .models import 
+
+#techbeatrice_first_img_carousel admin model
+class Techbeatrice_first_img_Admin (admin.ModelAdmin):
+    prepopulated_fields = {'techbeatrice_first_img_slug': ('techbeatrice_first_img_title',)}
+    list_display = ['techbeatrice_first_img_title','techbeatrice_first_img_author',]
+admin.site.register(Techbeatrice_first_img, Techbeatrice_first_img_Admin)
 
 #The Techbeatrice_Subjects post model admin of Techbeatrice
 class Techbeatrice_SubjectsModelAdmin (admin.ModelAdmin):
