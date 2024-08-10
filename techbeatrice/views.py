@@ -37,7 +37,7 @@ class HomeView(ListView):
     def get_context_data(self, **kwargs):  
         context = super().get_context_data(**kwargs)
     #the first techbeatrice home image car
-        context['first_img'] = Techbeatrice_first_img.objects.all()   
+        context['first_imgs'] = Techbeatrice_first_img.objects.all()   
     #context['user'] = self.request.user
         context['second_techbeatrices'] = Techbeatrice_Courses_PostModel.objects.all()
         return context

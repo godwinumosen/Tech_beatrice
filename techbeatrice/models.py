@@ -7,7 +7,7 @@ from datetime import datetime, date
 class Techbeatrice_first_img(models.Model):      
     techbeatrice_first_img_title = models.CharField(max_length =205, blank=True, null=True)
     techbeatrice_first_img_description = models.TextField()
-    techbeatrice_subjects_img = models.ImageField(upload_to ='tech_first_img/',blank=True,null=True)
+    techbeatrice_first_img_img = models.ImageField(upload_to ='tech_first_img/',blank=True,null=True)
     techbeatrice_first_img_slug = models.CharField(max_length =205, blank=True, null=True)
     techbeatrice_first_img_publish_date = models.DateTimeField (auto_now_add= True)
     techbeatrice_first_img_author = models.ForeignKey(User, on_delete=models.CASCADE)

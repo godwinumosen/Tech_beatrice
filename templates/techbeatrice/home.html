@@ -1,46 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}    <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5 mb-5">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#header-carousel" data-slide-to="1"></li>
-                <li data-target="#header-carousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="{%static 'img/carousel-1.jpg' %}" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Techbeatrice Online Courses</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="{% static 'img/carousel-2.jpg' %}" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">Best Online Learning Platform</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="{% static 'img/carousel-3.jpg' %}" style="min-height: 300px; object-fit: cover;">
-                    <div class="carousel-caption d-flex align-items-center justify-content-center">
-                        <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-md-3">Best Online Courses</h5>
-                            <h1 class="display-3 text-white mb-md-4">New Way To Learn From Home</h1>
-                        </div>
+{% block content %} 
+  <!-- Carousel Start -->
+<div class="container-fluid p-0 pb-5 mb-5">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#header-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#header-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#header-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for first_img in first_imgs %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}" style="min-height: 300px;">
+                <img class="position-relative w-100" src="{{ first_img.techbeatrice_first_img_img.url }}" style="min-height: 300px; object-fit: cover;">
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5" style="width: 100%; max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-md-3">{{ first_img.techbeatrice_first_img_title }}</h5>
+                        <h1 class="display-3 text-white mb-md-4">{{ first_img.techbeatrice_first_img_description }}</h1>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    <!-- Carousel End -->
+</div>
+<!-- Carousel End -->
+
     
+
+
+
 
     <!-- Category Start -->
 <div class="container-fluid py-5">
