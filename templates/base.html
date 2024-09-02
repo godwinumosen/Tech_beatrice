@@ -33,10 +33,10 @@
             </div>
             <div class="col-lg-3 text-right">
                 <div class="d-inline-flex align-items-center">
-                    <a href=""><i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
+                    <a href="https://maps.app.goo.gl/TMfQWfLeR7b578Lq9"><i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
                     <div class="text-left">
                         <h6 class="font-weight-semi-bold mb-1">Our Office</h6>
-                        <small>Greenville Estate,Badore Ajah,Lagos</small></a>
+                        <small>Greenville Estate,Ajah,Lagos</small></a>
                     </div>
                 </div>
             </div>
@@ -76,16 +76,31 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
                             <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
-                            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Who we are</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{% url 'about' %}" class="dropdown-item">About</a>
+                                    <a href="{% url 'instructor' %}" class="dropdown-item">Instructor</a>
+                                </div>
+                            </div>
                             <a href="{% url 'techbeatrice_courses' %}" class="nav-item nav-link">Courses</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online Application </a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online payment</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="{% url 'under_enrol' %}" class="dropdown-item">Enroll Now</a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">CyberSecurity Services</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cybersecurity Services </a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="" class="dropdown-item">Incident Response and Management</a>
+                                    <a href="" class="dropdown-item">Managed Security Services (MSS)</a>
+                                    <a href="" class="dropdown-item">Network Security</a>
+                                </div>
+                            </div>
+                           
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="{% url 'it_support' %}" class="dropdown-item">IT Support</a>
                                     <a href="{% url 'it_repairs'%}" class="dropdown-item">IT Repairs</a>
@@ -93,13 +108,12 @@
                                     <a href="{% url 'general_it_services'%}" class="dropdown-item">General IT Services</a>
                                 </div>
                             </div>
-                            <a href="{% url 'instructor' %}" class="nav-item nav-link">Instructor</a>
                             <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                         </div>
                         {% if user.is_authenticated %}
                         <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
                         {% else %}
-                        <a href="{% url 'login' %}" class="btn btn-primary">Login/Signup</a>
+                        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
                         {% endif %}
                     </div>
                 </nav>
@@ -131,7 +145,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Get In Touch</h5>
-                        <a class="text-white mb-2" href="https://maps.app.goo.gl/WqoVAzVzyWkvZyY5A"target="_blank"><p>Greenville Estate, Badore Ajah, Lekki Lagos</p></a>
+                        <a class="text-white mb-2" href="https://maps.app.goo.gl/TMfQWfLeR7b578Lq9"target="_blank"><p>Greenville Estate, Badore Ajah, Lekki Lagos</p></a>
                         <a class="text-white mb-2" href="https://wa.me/+2347064308254?text=Hi Techbeatrice are you there?"target="_blank"><p>+2347064308254</p></a>
                         <a class="text-white mb-2" href="mailto:techbeatricesolutions@gmail.com"><p>techbeatricesolutions@gmail.com</p></a>
                         <div class="d-flex justify-content-start mt-4">
