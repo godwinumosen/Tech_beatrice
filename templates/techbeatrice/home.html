@@ -37,7 +37,7 @@
     <div class="container pt-5 pb-3">
         <div class="text-center mb-5">
             <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Techbeatrice</h5>
-            <h1>Start your journey today</h1>
+            <h1 style="color: #0047AB;">Start your journey today</h1>
         </div>
         <div class="row">
             {% for post in object_list %}
@@ -67,7 +67,7 @@
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
-                <h1>Our Popular Courses</h1>
+                <h1 style="color: #0047AB;">Our Popular Courses</h1>
             </div>
             <div class="row">
                 {% for second_techbeatrice in second_techbeatrices %}
@@ -83,7 +83,7 @@
                             <p>{{ second_techbeatrice.techbeatrice_courses_description |truncatechars:70}}</p>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h5 class="m-0">${{ second_techbeatrice.techbeatrice_courses_cost_price}}</h5>
+                                    <h5 class="m-0">₦{{ second_techbeatrice.techbeatrice_courses_cost_price}}</h5>
                                     <div class="btn-wrapper">
                                         <a href="{% url 'second_detail' second_techbeatrice.pk %}" class="btn btn-primary"style="border-radius: 10px;">Read More</a>
                                     </div>
