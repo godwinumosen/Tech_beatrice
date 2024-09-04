@@ -20,6 +20,8 @@ urlpatterns = [
     path('it_repairs/', views.ItRepairs, name='it_repairs'),
     path('it_procurement_and_sales/', views.ItProcurementAndSales, name='it_procurement_and_sales'),
     path('general_it_services/', views.GeneralITServices, name='general_it_services'),
+    path('incindent_response/', views.IncidentResponse, name='incindent_response'),
+    path('managedsecurityservices/', views.ManagedSecurityServices, name='managedsecurityservices'),
 ]
 
 

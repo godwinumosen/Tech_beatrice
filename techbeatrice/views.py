@@ -111,3 +111,10 @@ def ItProcurementAndSales(request):
 #The General IT Services section using function base view only 
 def GeneralITServices(request):
     return render(request, 'techbeatrice/general_it_services.html', {})
+#The Incident Response section using function base view only 
+def IncidentResponse(request):
+    return render(request, 'techbeatrice/incindent_response.html', {})  
+
+#The Incident Response section using function base view only 
+def ManagedSecurityServices(request):
+    return render(request, 'techbeatrice/managedsecurityservices.html', {})
