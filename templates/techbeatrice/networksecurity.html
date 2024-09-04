@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Network Security  {% endblock %}
+{% block content %}
+
+  <!-- Header Start -->
+  <div class="container-fluid page-header" style="margin-bottom: 90px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+            <h3 class="display-4 text-white text-uppercase">Network Security </h3>
+            <div class="d-inline-flex text-white">
+                <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'home' %}">Home</a></p>
+                <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'techbeatrice_courses' %}">Our Courses</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+    <div class="container-fluid py-5">
+       
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/it.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <div class="text-left mb-4">
+                        <h4 style="color: #0047AB;">Understanding Network Security, Protecting Your Digital World</h4>
+                    </div>
+                    <p>Network security is a critical aspect of information technology that involves protecting 
+                        the integrity, confidentiality, and availability of data and resources as they are 
+                        transmitted across or accessed through networks. Here’s an overview of key concepts 
+                        and strategies related to network security.</p><br>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12 first">
+                                <ul class="check">
+                                    <li>Confidentiality</li>
+                                    <li>Integrity </li>
+                                    <li>Availability </li>
+                                    <li>Purchase Order and Acquisition</li>
+                                </ul><!-- end check -->
+                            </div><!-- end col-lg-4 -->    
+                        </div><!-- end row --> 
+                        <br>
+                        <div class="text-left mb-4">
+                            <h3 style="color: #0047AB;">Components of Network Security</h3>
+                        </div>
+                        <p> Firewalls Firewalls act as a barrier between trusted internal networks and 
+                            untrusted external networks. They filter traffic based on security rules to 
+                            prevent unauthorized access and attacks.
+                        </p><br>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-4 col-sm-4 col-xs-12 first">
+                                    <ul class="check">
+                                        <li>Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS)</li>
+                                        <li>Antivirus and Anti-Malware Software</li>
+                                        <li>Virtual Private Networks (VPNs) VPNs</li>
+                                        <li>Access Control</li>
+                                        <li>Encryption </li>
+                                    </ul><!-- end check -->
+                                </div><!-- end col-lg-4 -->    
+                            </div><!-- end row --> 
+                        <a href="{% url 'contact' %}" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

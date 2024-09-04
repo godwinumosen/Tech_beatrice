@@ -22,6 +22,8 @@ urlpatterns = [
     path('general_it_services/', views.GeneralITServices, name='general_it_services'),
     path('incindent_response/', views.IncidentResponse, name='incindent_response'),
     path('managedsecurityservices/', views.ManagedSecurityServices, name='managedsecurityservices'),
+    path('networksecurity/', views.NetworkSecurity, name='networksecurity'),
+
 ]
 
 

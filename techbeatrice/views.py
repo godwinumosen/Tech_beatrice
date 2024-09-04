@@ -118,3 +118,6 @@ def IncidentResponse(request):
 #The Incident Response section using function base view only 
 def ManagedSecurityServices(request):
     return render(request, 'techbeatrice/managedsecurityservices.html', {})
+#The Network Securitysection using function base view only 
+def NetworkSecurity(request):
+    return render(request, 'techbeatrice/networksecurity.html', {})
