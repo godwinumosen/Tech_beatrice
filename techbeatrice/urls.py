@@ -23,6 +23,7 @@ urlpatterns = [
     path('incindent_response/', views.IncidentResponse, name='incindent_response'),
     path('managedsecurityservices/', views.ManagedSecurityServices, name='managedsecurityservices'),
     path('networksecurity/', views.NetworkSecurity, name='networksecurity'),
+    path('dataprotectionandencryption/', views.DataProtectionandEncryption, name='dataprotectionandencryption'),
 
 ]
 
