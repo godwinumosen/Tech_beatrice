@@ -57,12 +57,10 @@ class SecondTechbeatriceDetailViewArticleDetailView(DetailView):
     context_object_name = 'second_techbeatrices'
     def SecondTechbeatriceDetailViewArticleDetailView(request, pk):
         object = get_object_or_404(Techbeatrice_Courses_PostModel, pk=pk)
-        return render(request, 'second_article_detail.html', {'second_detail': object})
-    
+        return render(request, 'second_article_detail.html', {'second_detail': object}) 
 #About page of the deus magnus blog app
 def AboutView (request):
     return render(request, 'techbeatrice/about_us.html', {})
-    
 #This category is for the Whatsapp API for Techbeatrice
 def techbeatrice_whatsapp_message(request):
     techbeatrice_whatsapp_number = '+2340064308254'
